@@ -1,0 +1,30 @@
+﻿@model List<Category>
+
+        <h1>Categorías</h1>
+
+        <p>
+            <a asp-action ="Create">
+                Crear
+            </a>
+        </p>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Categoría</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var category in Model)
+        {
+                <tr>
+                    <!--Obtiene el NameBrand de la tabla brand en sql-->
+                    <td>@Html.DisplayFor(n => category.FkbrandldNavigation.NameBrand)</td>
+                    <td>@Html.DisplayFor(n => category.NameCaty)</td>
+                    <td></td>
+                </tr>
+        }
+        </tbody>
+    </table>

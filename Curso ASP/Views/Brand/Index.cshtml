@@ -1,0 +1,23 @@
+﻿@model List<Curso_ASP.Models.Brand>
+
+
+    <!--Cada vez que se ingresa una marca a la DB, este la agrega, con el foreach-->
+
+    <h1>Marcas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var brand in Model)
+        {
+            <tr>
+                <!--Obtiene el NameBrand de la tabla brand en sql-->
+                <td>@Html.DisplayFor(n => brand.NameBrand)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
